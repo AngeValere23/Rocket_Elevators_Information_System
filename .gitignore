@@ -24,3 +24,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+.DS_Store
+
+Rocket_Elevators_Information_System_development
