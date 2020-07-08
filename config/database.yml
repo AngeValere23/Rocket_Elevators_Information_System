@@ -10,11 +10,11 @@
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: toor
+  password: jk09)NEY#$
   host: localhost
   port: 3306
 
