@@ -9,8 +9,13 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+////= js/plugins/jquery/jquery-3.3.1.min.js
+//= js/plugins/slider.revolution/js/jquery.themepunch.tools.min.js
+//= js/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js
+//= js/view/demo.revolution_slider.js
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+//= require bootstrap-sprockets
 //= require_tree .

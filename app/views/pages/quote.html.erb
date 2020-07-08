@@ -1,0 +1,138 @@
+<% content_for :for_head do %>
+<title>Rocket Elevators - Get a quote</title>
+<link href="/assets/css/layout-shop.css" rel="stylesheet" type="text/css" />
+<% end %>
+
+<!-- Header-->
+<section class="page-header page-header-xs">
+    <div class="container">
+        <h1>GET A QUOTE</h1>
+        <ol class="breadcrumb">
+            <li><a href="/#">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a class="active" href="/quote#">Get a quote</a></li>
+        </ol>
+    </div>
+</section>
+<!-- Quote-->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-sm-8">
+                <form class="cartContent clearfix" method="post" action="#">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-4"><label for="contact:name">Full Name</label><input class="form-control" required="required" type="text" value="" id="building-name" /></div>
+                            <div class="col-md-4"><label for="contact:email">E-mail Address</label><input class="form-control" required="required" type="email" value="" id="building-email" /></div>
+                            <div class="col-md-4"><label for="contact:phone">Phone</label><input class="form-control" type="text" value="" id="building-phone" /></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"><label for="contact:subject">Business Name</label><input class="form-control" required="required" type="text" value="" id="building-business" /></div>
+                            <div class="col-md-4"><label for="contact:subject">Project Name</label><input class="form-control" required="required" type="text" value="" id="building-project" /></div>
+                            <div class="col-md-4"><label for="contact_department">Building Type</label><select class="form-control pointer" id="building-select">
+                                    <option value="">--- Select ---</option>
+                                    <option value="Residential">Residential</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="Corporate">Corporate</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                </select></div>
+                        </div>
+                        <hr />
+                        <!-- Residential-->
+                        <div class="row" id="residential-form">
+                            <div class="col-md-4"><label for="contact:subject">Number of apartment</label><input class="form-control" required="required" type="number" value="" id="residential-apartment" /></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of floor</label><input class="form-control" required="required" type="number" value="" id="residential-floor" /></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of basement</label><input class="form-control" required="required" type="number" value="" id="residential-basement" /></div>
+                        </div>
+                        <!-- Commercial-->
+                        <div id="commercial-form">
+                            <div class="row">
+                                <div class="col-md-4"><label for="contact:subject">Number of business</label><input class="form-control" required="required" type="number" value="" id="commercial-business" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input class="form-control" required="required" type="number" value="" id="commercial-floor" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input class="form-control" required="required" type="number" value="" id="commercial-basement" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6"><label for="contact:subject">Number of parking</label><input class="form-control" required="required" type="number" value="" id="commercial-parking" /></div>
+                                <div class="col-md-6"><label for="contact:subject">Number of shaft</label><input class="form-control" required="required" type="number" value="" id="commercial-shaft" /></div>
+                            </div>
+                        </div>
+                        <!-- Corporate-->
+                        <div id="corporate-form">
+                            <div class="row">
+                                <div class="col-md-4"><label for="contact:subject">Number of companies</label><input class="form-control" required="required" type="number" value="" id="corporate-companies" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input class="form-control" required="required" type="number" value="" id="corporate-floor" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input class="form-control" required="required" type="number" value="" id="corporate-basement" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6"><label for="contact:subject">Number of parking</label><input class="form-control" required="required" type="number" value="" id="corporate-parking" /></div>
+                                <div class="col-md-6"><label for="contact:subject">Number of occupant/floor</label><input class="form-control" required="required" type="number" value="" id="corporate-occupant" /></div>
+                            </div>
+                        </div>
+                        <!-- Hybrid-->
+                        <div id="hybrid-form">
+                            <div class="row">
+                                <div class="col-md-4"><label for="contact:subject">Number of business</label><input class="form-control" required="required" type="number" value="" id="hybrid-business" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input class="form-control" required="required" type="number" value="" id="hybrid-floor" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input class="form-control" required="required" type="number" value="" id="hybrid-basement" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4"><label for="contact:subject">Number of parking</label><input class="form-control" required="required" type="number" value="" id="hybrid-parking" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of occupant/floor</label><input class="form-control" required="required" type="number" value="" id="hybrid-occupant" /></div>
+                                <div class="col-md-4"><label for="contact_department">Active hours/day</label><select class="form-control pointer" id="hybrid-active">
+                                        <option value="">--- Select ---</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                    </select></div>
+                            </div>
+                        </div>
+                        <!-- Quality-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="quality-form"><label class="radio"><input type="radio" name="quality-radio" value="standard" checked="checked" /><i></i>Standard</label><label class="radio"><input type="radio" name="quality-radio" value="premium" /><i></i>Premium</label>
+                                    <label class="radio"><input type="radio" name="quality-radio" value="excelium" /><i></i>Excelium</label>
+                                </form>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+                <div class="toggle-transparent toggle-bordered-full clearfix">
+                    <div class="toggle active">
+                        <div class="toggle-content"><span class="clearfix"><span class="float-right" id="elevator-number">--</span><span class="float-left">Number of elevator:</span></span><span class="clearfix"><span class="float-right" id="elevator-price">--</span><span class="float-left">Price/elevator:</span></span>
+                            <span class="clearfix"><span class="float-right" id="elevator-subtotal">--</span><span class="float-left">Subtotal:</span></span><span class="clearfix"><span class="float-right" id="elevator-fee">--</span><span class="float-left">Install fee:</span></span>
+                            <hr /><span class="clearfix"><span class="float-right fs-20" id="elevator-total">--</span><strong class="float-left">TOTAL:</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% content_for :for_foot do %>
+<script src="/assets/js/quote.js"></script>
+<% end %>

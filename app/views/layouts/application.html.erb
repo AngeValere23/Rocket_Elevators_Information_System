@@ -1,15 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RocketElevatorsInformationSystem</title>
+
+<head>
+    <meta charset="utf-8" />
+
+
+    <% if content_for? :for_head %>
+    <%= yield :for_head %>
+    <%else%>
+    <title>Rocket Elevators</title>
+    <% end %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="description" content="Elevate safety, speed and style" />
+    <meta name="Author" content="Frédéric Choquette [https://github.com/frederic2ec]" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Mobile settings-->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <!-- Web fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+    <!-- Core CSS-->
+    <link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Revolution slider-->
+    <link href="/assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
+    <!-- Theme CSS-->
+    <link href="/assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/layout.css" rel="stylesheet" type="text/css" />
+    <!-- Page level scripts-->
+    <link href="/assets/css/header-1.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
+</head>
+
+<body class="smoothscroll enable-animation">
+    <div id="wrapper">
+        <%= render 'layouts/header'%>
+
+        <%= yield %>
+
+        <%= render 'layouts/footer'%>
+    </div>
+
+    <!-- Scroll to top--><a href="#" id="toTop"></a>
+    <!-- Preloader-->
+    <div id="preloader">
+        <div class="inner"><span class="loader"></span></div>
+    </div>
+    <!-- Javascript files-->
+    <script>
+        var plugin_path = '/assets/plugins/';
+    </script>
+    <script src="/assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/newsletter.js"></script>
+    <script src="/assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="/assets/js/revolution_slider.js"></script>
+
+    <% if content_for? :for_foot %>
+    <%= yield :for_foot %>
+    <%else%>
+    <title>Rocket Elevators</title>
+    <% end %>
+
+</body>
+
 </html>
