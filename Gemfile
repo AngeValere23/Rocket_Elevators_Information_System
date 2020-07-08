@@ -77,3 +77,8 @@ gem 'devise'
 gem 'rails_admin', '~> 2.0'
 
 gem 'sqlite3'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
