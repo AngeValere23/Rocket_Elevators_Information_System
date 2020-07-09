@@ -82,6 +82,8 @@
                               <%= form.text_field :nbasement, :class =>"form-control",:id=>"residential-basement" %>
                             </div>
 
+                      </div>
+
                             <div class="row" id="commercial-form">
 
                                   <div class="col-md-4">
@@ -99,19 +101,15 @@
                                     <%= form.text_field :nbasement, :class =>"form-control",:id=>"commercial-basement" %>
                                   </div>
 
-                              <div class="row">
-
-                                  <div class="col-md-4">
+                                  <div class="col-md-6">
                                     <%= form.label "Number of parking"%>
                                     <%= form.text_field :nbpark, :class =>"form-control",:id=>"ccommercial-parking" %>
                                   </div>
 
-                                  <div class="col-md-4">
+                                  <div class="col-md-6">
                                     <%= form.label "Number of shaft"%>
                                     <%= form.text_field :nShaft, :class =>"form-control",:id=>"commercial-shaft" %>
                                   </div>
-
-                              </div>
                         </div>
 
                         <div class="row" id="corporate-form">
@@ -130,9 +128,6 @@
                                 <%= form.label "Number of basement"%>
                                 <%= form.text_field :nbasement, :class =>"form-control",:id=>"corporate-basement" %>
                               </div>
-
-                          <div class="row">
-
                               <div class="col-md-4">
                                 <%= form.label "Number of parking"%>
                                 <%= form.text_field :nbpark, :class =>"form-control",:id=>"corporate-parking" %>
@@ -142,8 +137,6 @@
                                 <%= form.label "Number of occupant/floor"%>
                                 <%= form.text_field :MaxOccCorp, :class =>"form-control",:id=>"corporate-occupant" %>
                               </div>
-
-                          </div>
                     </div>
 
                     <div class="row" id="hybrid-form">
@@ -163,8 +156,6 @@
                             <%= form.text_field :nbasement, :class =>"form-control",:id=>"hybrid-basement" %>
                           </div>
 
-                      <div class="row">
-
                           <div class="col-md-4">
                             <%= form.label "Number of parking"%>
                             <%= form.text_field :nbpark, :class =>"form-control",:id=>"hybrid-parking" %>
@@ -173,7 +164,8 @@
                           <div class="col-md-4">
                             <%= form.label "Number of occupant/floor"%>
                             <%= form.text_field :MaxOccCorp, :class =>"form-control",:id=>"hybrid-occupant" %>
-
+                          </div>
+                          <div class="col-md-4">
                             <%= form.label "Active hours/day"%>
                             <%= select_tag(:hybrid_active, raw('<option value="">--- Select ---</option>
                               <option value="0">0</option>
@@ -204,8 +196,6 @@
                             %>
 
                           </div>
-
-                      </div>
                 </div>
 
                         <!--<div class="row">
@@ -249,7 +239,7 @@
                                 <div class="col-md-6"><label for="contact:subject">Number of occupant/floor</label><input class="form-control" required="required" type="number" value="" id="corporate-occupant" /></div>
                             </div>
                         </div>-->
-                        <!-- Hybrid-->
+                        <!-- Hybrid
                         <div id="hybrid-form">
                             <div class="row">
                                 <div class="col-md-4"><label for="contact:subject">Number of business</label><input class="form-control" required="required" type="number" value="" id="hybrid-business" /></div>
@@ -288,7 +278,7 @@
                                         <option value="24">24</option>
                                     </select></div>
                             </div>
-                        </div>
+                        </div>-->
                         <!-- Quality-->
                         <div class="row">
                             <div class="col-md-12">
