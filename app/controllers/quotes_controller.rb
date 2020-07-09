@@ -12,17 +12,30 @@ before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
 
  def new
-   @quote = Quote.new
+   @quote = Quote.new #Generate data blank new form
  end
 
  def edit
  end
 
+
+ private
+
+   def set_quote
+     @quote = Quote.find(params[:id])
+   end
+
+
+   def quote_params
+     params.permit(:Full_Name, :Phone_Number, :Email, :Business_Name, :Project_Name, :buildingSelect, :nappartement,:nfloor,:nbasement,
+     :nbusiness, :nbpark, :nShaft, :nbcompagnie, :MaxOccCorp, :hybrid_active)
+   end
+
  # POST /quote
  def create
-   @quote = Quote.new()
+   @quote = Quote.new(quote_params)
 
-   if params[:department] == 'Residential'
+   if params[:buildingSelectt] == 'Residential'
        @quote.FullName = quote_params[:Full_Name]
        @quote.Phone = quote_params[:Phone_Number]
        @quote.Email = quote_params[:Email]
@@ -36,7 +49,7 @@ before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
    end
 
-   if  params[:department] == 'Commercial'
+   if  params[:buildingSelect] == 'Commercial'
        @quote.FullName = quote_params[:Full_Name]
        @quote.Phone = quote_params[:Phone_Number]
        @quote.Email = quote_params[:Email]
@@ -51,7 +64,7 @@ before_action :set_quote, only: [:show, :edit, :update, :destroy]
        @quote.Nb_shaft = quote_params[:nShaft]
    end
 
-   if params[:department] == 'Corporate'
+   if params[:buildingSelect] == 'Corporate'
        @quote.FullName = quote_params[:Full_Name]
        @quote.Phone = quote_params[:Phone_Number]
        @quote.Email = quote_params[:Email]
@@ -67,7 +80,7 @@ before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
    end
 
-   if params[:department] == 'Hybrid'
+   if params[:buildingSelect] == 'Hybrid'
      @quote.FullName = quote_params[:Full_Name]
      @quote.Phone = quote_params[:Phone_Number]
      @quote.Email = quote_params[:Email]
@@ -82,7 +95,6 @@ before_action :set_quote, only: [:show, :edit, :update, :destroy]
      @quote.Nb_OccupantPerFloor = quote_params[:MaxOccCorp]
      @quote.Building_active = quote_params[:hybrid_active]
 
-
    end
 
    respond_to do |format|
@@ -96,7 +108,6 @@ before_action :set_quote, only: [:show, :edit, :update, :destroy]
    end
  end
 
- # PATCH/PUT /quotes/1
  def update
    respond_to do |format|
      if @quote.update(quote_params)
@@ -117,16 +128,4 @@ before_action :set_quote, only: [:show, :edit, :update, :destroy]
      format.json { head :no_content }
    end
  end
-
- private
-
-   def set_quote
-     @quote = Quote.find(params[:id])
-   end
-
-
-   def quote_params
-     params.permit(:Full_Name, :Phone_Number, :Email, :Business_Name, :Project_Name, :buildingSelect, :nappartement,:nfloor,:nbasement,
-     :nbusiness, :nbpark, :nShaft, :nbcompagnie, :MaxOccCorp, :hybrid_active)
-   end
 end
