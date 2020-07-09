@@ -394,8 +394,7 @@
 
 <% content_for :for_foot do %>
 <script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
-<script src="/assets/js/contact.js">
-</script>
+<%= javascript_include_tag "js/contact.js", "data-turbolinks-track" => "reload" %>
 <script src="/assets/plugins/gmaps.js"></script>
 <script>
     jQuery(document).ready(function() {

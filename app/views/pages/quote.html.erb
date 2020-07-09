@@ -141,5 +141,5 @@
 </section>
 
 <% content_for :for_foot do %>
-<script src="/assets/js/quote.js"></script>
+<%= javascript_include_tag "js/quote.js", "data-turbolinks-track" => "reload" %>
 <% end %>

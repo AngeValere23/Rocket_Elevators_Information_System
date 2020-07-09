@@ -31,11 +31,11 @@
     <link href="/assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
     <link href="/assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
     <!-- Theme CSS-->
-    <link href="/assets/css/essentials.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/layout.css" rel="stylesheet" type="text/css" />
+    <%= stylesheet_link_tag "css/essentials.css", media: "all", "data-turbolinks-track" => "reload" %>
+    <%= stylesheet_link_tag "css/layout.css", media: "all", "data-turbolinks-track" => "reload" %>
     <!-- Page level scripts-->
-    <link href="/assets/css/header-1.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
+    <%= stylesheet_link_tag "css/header-1.css", media: "all", "data-turbolinks-track" => "reload" %>
+    <%= stylesheet_link_tag "css/color_scheme/red.css", media: "all", "data-turbolinks-track" => "reload" %>
 </head>
 
 <body class="smoothscroll enable-animation">
@@ -57,11 +57,11 @@
         var plugin_path = '/assets/plugins/';
     </script>
     <script src="/assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-    <script src="/assets/js/scripts.js"></script>
-    <script src="/assets/js/newsletter.js"></script>
+    <%= javascript_include_tag "js/scripts.js", "data-turbolinks-track" => "reload" %>
+    <%= javascript_include_tag "js/newsletter.js", "data-turbolinks-track" => "reload" %>
     <script src="/assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
     <script src="/assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="/assets/js/revolution_slider.js"></script>
+    <%= javascript_include_tag "js/revolution_slider.js", "data-turbolinks-track" => "reload" %>
 
     <% if content_for? :for_foot %>
     <%= yield :for_foot %>
