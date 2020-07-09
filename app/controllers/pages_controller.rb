@@ -15,21 +15,9 @@ class PagesController < ApplicationController
     def corporate
   
     end
-  
-    def policies
-  
-    end
-  
-    def terms
-  
-    end
-  
-    def signup
-  
-    end
-  
-    def signin
-  
+
+    def quote
+
     end
   
   end

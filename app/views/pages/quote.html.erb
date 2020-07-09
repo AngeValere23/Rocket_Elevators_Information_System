@@ -19,14 +19,134 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-sm-8">
-                <form class="cartContent clearfix" method="post" action="#">
+                <!-- <\form class="cartContent clearfix" method="post" action="#">-->
+                <%= form_for :quote, url:"/quote", :class =>"cartContent clearfix" do |form|  %>
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                     <fieldset>
                         <div class="row">
-                            <div class="col-md-4"><label for="contact:name">Full Name</label><input class="form-control" required="required" type="text" value="" id="building-name" /></div>
-                            <div class="col-md-4"><label for="contact:email">E-mail Address</label><input class="form-control" required="required" type="email" value="" id="building-email" /></div>
-                            <div class="col-md-4"><label for="contact:phone">Phone</label><input class="form-control" type="text" value="" id="building-phone" /></div>
+                             <div class="col-md-4"><!--<label for="contact:name">Full Name</label><input class="form-control" required="required" type="text" value="" id="building-name" /></div>
+
+                            <label for="contact:email">E-mail Address</label><input class="form-control" required="required" type="email" value="" id="building-email" /></div>
+                            <div class="col-md-4"><label for="contact:phone">Phone</label><input class="form-control" type="text" value="" id="building-phone" />-->
+                              <%= form.label "Full Name"%>
+                              <%= form.text_field :Full_Name, :class =>"form-control", :id =>"building-name" %>
+                            </div>
+                            <div class="col-md-4">
+                              <%= form.label "E-mail Address"%>
+                              <%= form.text_field :Email, :class =>"form-control", :id =>"building-email"%>
+                            </div>
+                            <div class="col-md-4">
+                              <%= form.label "Phone"%>
+                              <%= form.text_field :Phone_Number, :class =>"form-control", :id=>"building-phone" %>
+                            </div>
+
                         </div>
+
                         <div class="row">
+
+                            <div class="col-md-4">
+                              <%= form.label "Business Name"%>
+                              <%= form.text_field :Business_Name, :class =>"form-control", :id=>"building-business"%>
+                            </div>
+
+                            <div class="col-md-4">
+                              <%= form.label "Project Name"%>
+                              <%= form.text_field :Project_Name, :class =>"form-control",:id=>"building-project" %>
+                            </div>
+
+                            <div class="col-md-4">
+                              <%= form.label "Building Type"%>
+                              <%= select_tag(:buildingSelect, raw('<option value="Residential">Residential</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Corporate">Corporate</option>
+                                <option value="Hybrid">Hybrid</option>'), :class=>'form-control', :id=>"building-select")
+                              %>
+                            </div>
+
+                        </div>
+
+                        <div class="row" id="residential-form">
+
+                            <div class="col-md-4">
+                              <%= form.label "Number of apartment"%>
+                              <%= form.text_field :nappartement, :class =>"form-control", :id=>"residential-apartment"%>
+                            </div>
+
+                            <div class="col-md-4">
+                              <%= form.label "Number of floor"%>
+                              <%= form.text_field :nfloor, :class =>"form-control",:id=>"residential-floor" %>
+                            </div>
+
+                            <div class="col-md-4">
+                              <%= form.label "Number of basement"%>
+                              <%= form.text_field :nbasement, :class =>"form-control",:id=>"residential-basement" %>
+                            </div>
+
+                            <div class="row" id="commercial-form">
+
+                                  <div class="col-md-4">
+                                    <%= form.label "Number of Business"%>
+                                    <%= form.text_field :nbusiness, :class =>"form-control", :id=>"commercial-business"%>
+                                  </div>
+
+                                  <div class="col-md-4">
+                                    <%= form.label "Number of floor"%>
+                                    <%= form.text_field :nfloor, :class =>"form-control",:id=>"commercial-floor" %>
+                                  </div>
+
+                                  <div class="col-md-4">
+                                    <%= form.label "Number of basement"%>
+                                    <%= form.text_field :nbasement, :class =>"form-control",:id=>"commercial-basement" %>
+                                  </div>
+
+                              <div class="row">
+
+                                  <div class="col-md-4">
+                                    <%= form.label "Number of parking"%>
+                                    <%= form.text_field :nbpark, :class =>"form-control",:id=>"ccommercial-parking" %>
+                                  </div>
+
+                                  <div class="col-md-4">
+                                    <%= form.label "Number of shaft"%>
+                                    <%= form.text_field :nShaft, :class =>"form-control",:id=>"commercial-shaft" %>
+                                  </div>
+
+                              </div>
+                        </div>
+
+                        <div class="row" id="corporate-form">
+
+                              <div class="col-md-4">
+                                <%= form.label "Number of companies"%>
+                                <%= form.text_field :nbcompagnie, :class =>"form-control", :id=>"corporate-companies"%>
+                              </div>
+
+                              <div class="col-md-4">
+                                <%= form.label "Number of floor"%>
+                                <%= form.text_field :nfloor, :class =>"form-control",:id=>"corporate-floor" %>
+                              </div>
+
+                              <div class="col-md-4">
+                                <%= form.label "Number of basement"%>
+                                <%= form.text_field :nbasement, :class =>"form-control",:id=>"corporate-basement" %>
+                              </div>
+
+                          <div class="row">
+
+                              <div class="col-md-4">
+                                <%= form.label "Number of parking"%>
+                                <%= form.text_field :nbpark, :class =>"form-control",:id=>"corporate-parking" %>
+                              </div>
+
+                              <div class="col-md-4">
+                                <%= form.label "Number of occupant/floor"%>
+                                <%= form.text_field :MaxOccCorp, :class =>"form-control",:id=>"corporate-occupant" %>
+                              </div>
+
+                          </div>
+                    </div>
+
+                        <!--<div class="row">
                             <div class="col-md-4"><label for="contact:subject">Business Name</label><input class="form-control" required="required" type="text" value="" id="building-business" /></div>
                             <div class="col-md-4"><label for="contact:subject">Project Name</label><input class="form-control" required="required" type="text" value="" id="building-project" /></div>
                             <div class="col-md-4"><label for="contact_department">Building Type</label><select class="form-control pointer" id="building-select">
@@ -35,16 +155,15 @@
                                     <option value="Commercial">Commercial</option>
                                     <option value="Corporate">Corporate</option>
                                     <option value="Hybrid">Hybrid</option>
-                                </select></div>
-                        </div>
+                                </select></div>  </div>-->
                         <hr />
-                        <!-- Residential-->
+                        <!-- Residential
                         <div class="row" id="residential-form">
                             <div class="col-md-4"><label for="contact:subject">Number of apartment</label><input class="form-control" required="required" type="number" value="" id="residential-apartment" /></div>
                             <div class="col-md-4"><label for="contact:subject">Number of floor</label><input class="form-control" required="required" type="number" value="" id="residential-floor" /></div>
                             <div class="col-md-4"><label for="contact:subject">Number of basement</label><input class="form-control" required="required" type="number" value="" id="residential-basement" /></div>
-                        </div>
-                        <!-- Commercial-->
+                        </div>-->
+                        <!-- Commercial
                         <div id="commercial-form">
                             <div class="row">
                                 <div class="col-md-4"><label for="contact:subject">Number of business</label><input class="form-control" required="required" type="number" value="" id="commercial-business" /></div>
@@ -55,8 +174,8 @@
                                 <div class="col-md-6"><label for="contact:subject">Number of parking</label><input class="form-control" required="required" type="number" value="" id="commercial-parking" /></div>
                                 <div class="col-md-6"><label for="contact:subject">Number of shaft</label><input class="form-control" required="required" type="number" value="" id="commercial-shaft" /></div>
                             </div>
-                        </div>
-                        <!-- Corporate-->
+                        </div>-->
+                        <!-- Corporate
                         <div id="corporate-form">
                             <div class="row">
                                 <div class="col-md-4"><label for="contact:subject">Number of companies</label><input class="form-control" required="required" type="number" value="" id="corporate-companies" /></div>
@@ -67,7 +186,7 @@
                                 <div class="col-md-6"><label for="contact:subject">Number of parking</label><input class="form-control" required="required" type="number" value="" id="corporate-parking" /></div>
                                 <div class="col-md-6"><label for="contact:subject">Number of occupant/floor</label><input class="form-control" required="required" type="number" value="" id="corporate-occupant" /></div>
                             </div>
-                        </div>
+                        </div>-->
                         <!-- Hybrid-->
                         <div id="hybrid-form">
                             <div class="row">
@@ -117,7 +236,8 @@
                             </div>
                         </div>
                     </fieldset>
-                </form>
+                    <%= form.submit%>
+                <% end %>
             </div>
             <div class="col-lg-3 col-sm-4">
                 <div class="toggle-transparent toggle-bordered-full clearfix">
