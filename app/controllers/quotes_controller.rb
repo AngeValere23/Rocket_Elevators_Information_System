@@ -126,8 +126,7 @@ before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
 
    def quote_params
-     params.permit(:department, :Check, :NbApartRes, :NbStageRes, :NbSsRes, :nb_of_cage, :totalprice, :NbStageCom,
-       :NbSsCom, :NbParkCom, :NbBusiCom, :NbCageCom, :NbBusiCorp,:NbStageCorp, :NbSsCorp, :NbParkCorp,
-       :MaxOccCorp, :NbBusiHyb, :NbStageHyb, :NbSsHyb, :NbParkHyb, :MaxOccHyb, :OppHourHyb, :Full_Name, :Phone_Number)
+     params.permit(:Full_Name, :Phone_Number, :Email, :Business_Name, :Project_Name, :buildingSelect, :nappartement,:nfloor,:nbasement,
+     :nbusiness, :nbpark, :nShaft, :nbcompagnie, :MaxOccCorp, :hybrid_active)
    end
 end
