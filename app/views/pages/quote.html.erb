@@ -1,6 +1,6 @@
 <% content_for :for_head do %>
 <title>Rocket Elevators - Get a quote</title>
-<link href="/assets/css/layout-shop.css" rel="stylesheet" type="text/css" />
+<%= stylesheet_link_tag "layout-shop.css", media: "all", "data-turbolinks-track" => "reload" %>
 <% end %>
 
 <!-- Header-->
@@ -141,5 +141,5 @@
 </section>
 
 <% content_for :for_foot do %>
-<%= javascript_include_tag "js/quote.js", "data-turbolinks-track" => "reload" %>
+<%= javascript_include_tag "quote.js", "data-turbolinks-track" => "reload" %>
 <% end %>
