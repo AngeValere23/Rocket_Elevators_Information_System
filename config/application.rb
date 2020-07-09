@@ -18,6 +18,5 @@ module RocketElevatorsInformationSystem
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     config.serve_static_assets = true
-    config.assets.compile = false
   end
 end
