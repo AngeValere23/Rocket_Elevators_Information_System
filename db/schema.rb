@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_07_07_141909) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
+    t.integer "user_id"
     t.string "lastname"
     t.string "firstname"
     t.string "title"
@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 2020_07_07_141909) do
     t.integer "phone"
     t.string "businessname"
     t.string "projectname"
-    t.integer "buildingtype"
-    t.integer "quality"
+    t.string "buildingtype"
+    t.string "quality"
     t.integer "nbapartment"
     t.integer "nbfloor"
-    t.integer "nbbasemenet"
+    t.integer "nbbasement"
     t.integer "nbbusiness"
     t.integer "nbparking"
     t.integer "nbshaft"
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2020_07_07_141909) do
     t.integer "nbcompanies"
     t.integer "activehours"
     t.integer "nbelevator"
-    t.float "elevatorprice"
-    t.float "subtotal"
-    t.float "installfee"
-    t.float "total"
+    t.string "elevatorprice"
+    t.string "subtotal"
+    t.string "installfee"
+    t.string "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,5 +60,4 @@ ActiveRecord::Schema.define(version: 2020_07_07_141909) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "employees", "users"
 end

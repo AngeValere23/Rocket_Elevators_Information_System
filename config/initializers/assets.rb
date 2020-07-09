@@ -18,6 +18,7 @@ Rails.application.config.assets.precompile += %w( js/plugins/slider.revolution/j
 Rails.application.config.assets.precompile += %w( js/plugins/slider.revolution/js/jquery.themepunch.tools.min.js )
 Rails.application.config.assets.precompile += %w( js/scripts.js )
 Rails.application.config.assets.precompile += %w( js/validator.min.js )
+Rails.application.config.assets.precompile += %w( js/quote.js )
 Rails.application.config.assets.precompile += %w( plugins/select2/js/select2.full.min.js )
 Rails.application.config.assets.precompile += %w( plugins/select2/js/select2.min.js )
 Rails.application.config.assets.precompile += %w( plugins/select2/js/select2.full.min (1).js )

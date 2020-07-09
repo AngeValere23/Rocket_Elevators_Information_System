@@ -36,7 +36,7 @@ $(document).ready(function () {
   });
 
   // Quality change
-  $("input[name='quality-radio']").change(function () {
+  $("input[name='quality']").change(function () {
     quality = this.value;
     sendRequest();
   });
@@ -193,6 +193,23 @@ $(document).ready(function () {
     const input = $("#hybrid-active");
     valid ? input.addClass("error") : input.removeClass("error");
   });
+
+  // Sync fiel
+  $("input[name='nbfloor']").on("keyup paste", function () {
+    $("input[name='nbfloor']").not(this).val($(this).val());
+  });
+  $("input[name='nbbasement']").on("keyup paste", function () {
+    $("input[name='nbbasement']").not(this).val($(this).val());
+  });
+  $("input[name='nbparking']").on("keyup paste", function () {
+    $("input[name='nbparking']").not(this).val($(this).val());
+  });
+  $("input[name='nboccupant']").on("keyup paste", function () {
+    $("input[name='nboccupant']").not(this).val($(this).val());
+  });
+  $("input[name='nbbusiness']").on("keyup paste", function () {
+    $("input[name='nbbusiness']").not(this).val($(this).val());
+  });
 });
 
 function hideAllForm() {
@@ -218,6 +235,12 @@ function clearForm() {
   $("#hybrid-basement").val("");
   // Clear price
   $("#elevator-number").text("--");
+  // Clear shared field
+  $("input[name='nbfloor'").val("");
+  $("input[name='nbbasement']").val("");
+  $("input[name='nbparking']").val("");
+  $("input[name='nboccupant']").val("");
+  $("input[name='nbbusiness']").val("");
 }
 
 function calcResEl() {
@@ -252,7 +275,7 @@ function sendRequest() {
 
   $.ajax({
     type: "POST",
-    url: "/quote",
+    url: "https://rocket-elevators.frederic2ec.tk/quote",
     data: sentData,
   }).done(function (data) {
     updatePricing(data);
@@ -267,11 +290,18 @@ function updatePricing(data) {
   const total = data.total;
 
   if (total !== "0.00") {
+    // User interface
     $("#elevator-number").text(elevatorNb);
     $("#elevator-price").text("$ " + elevatorPrice);
     $("#elevator-subtotal").text("$ " + subtotal);
     $("#elevator-fee").text("$ " + installFee);
     $("#elevator-total").text("$ " + total);
+    // Hidden field
+    $("#nbelevator").val(elevatorNb);
+    $("#elevatorprice").val(elevatorPrice);
+    $("#subtotal").val(subtotal);
+    $("#installfee").val(installFee);
+    $("#total").val(total);
   } else {
     $("#elevator-number").text("--");
     $("#elevator-price").text("--");

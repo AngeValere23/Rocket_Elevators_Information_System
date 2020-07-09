@@ -6,11 +6,11 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.integer :phone
       t.string :businessname
       t.string :projectname
-      t.integer :buildingtype
-      t.integer :quality
+      t.string :buildingtype
+      t.string :quality
       t.integer :nbapartment
       t.integer :nbfloor
-      t.integer :nbbasemenet
+      t.integer :nbbasement
       t.integer :nbbusiness
       t.integer :nbparking
       t.integer :nbshaft
@@ -18,10 +18,10 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.integer :nbcompanies
       t.integer :activehours
       t.integer :nbelevator
-      t.float :elevatorprice
-      t.float :subtotal
-      t.float :installfee
-      t.float :total
+      t.string :elevatorprice
+      t.string :subtotal
+      t.string :installfee
+      t.string :total
 
       t.timestamps
     end
