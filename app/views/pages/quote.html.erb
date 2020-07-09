@@ -146,6 +146,68 @@
                           </div>
                     </div>
 
+                    <div class="row" id="hybrid-form">
+
+                          <div class="col-md-4">
+                            <%= form.label "Number of companies"%>
+                            <%= form.text_field :nbcompagnie, :class =>"form-control", :id=>"hybrid-business"%>
+                          </div>
+
+                          <div class="col-md-4">
+                            <%= form.label "Number of floor"%>
+                            <%= form.text_field :nfloor, :class =>"form-control",:id=>"hybrid-floor" %>
+                          </div>
+
+                          <div class="col-md-4">
+                            <%= form.label "Number of basement"%>
+                            <%= form.text_field :nbasement, :class =>"form-control",:id=>"hybrid-basement" %>
+                          </div>
+
+                      <div class="row">
+
+                          <div class="col-md-4">
+                            <%= form.label "Number of parking"%>
+                            <%= form.text_field :nbpark, :class =>"form-control",:id=>"hybrid-parking" %>
+                          </div>
+
+                          <div class="col-md-4">
+                            <%= form.label "Number of occupant/floor"%>
+                            <%= form.text_field :MaxOccCorp, :class =>"form-control",:id=>"hybrid-occupant" %>
+
+                            <%= form.label "Active hours/day"%>
+                            <%= select_tag(:hybrid_active, raw('<option value="">--- Select ---</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>'), :class=>'form-control', :id=>"hybrid-active")
+                            %>
+
+                          </div>
+
+                      </div>
+                </div>
+
                         <!--<div class="row">
                             <div class="col-md-4"><label for="contact:subject">Business Name</label><input class="form-control" required="required" type="text" value="" id="building-business" /></div>
                             <div class="col-md-4"><label for="contact:subject">Project Name</label><input class="form-control" required="required" type="text" value="" id="building-project" /></div>

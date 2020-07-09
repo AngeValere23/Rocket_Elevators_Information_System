@@ -68,18 +68,20 @@ before_action :set_quote, only: [:show, :edit, :update, :destroy]
    end
 
    if params[:department] == 'Hybrid'
-       @quote.FullName = quote_params[:Full_Name]
-       @quote.Phone = quote_params[:Phone_Number]
-       @quote.Building_Type = quote_params[:department]
-       @quote.Product_Grade = quote_params[:Check]
-       @quote.Nb_Business = quote_params[:NbBusiHyb]
-       @quote.Nb_Floor = quote_params[:NbStageHyb]
-       @quote.Nb_Basement = quote_params[:NbSsHyb]
-       @quote.Nb_Parking = quote_params[:NbParkHyb]
-       @quote.Nb_OccupantPerFloor = quote_params[:MaxOccHyb]
-       @quote.Nb_OpperatingHour = quote_params[:OppHourHyb]
-       @quote.Nb_Cage = quote_params[:nb_of_cage]
-       @quote.Final_Price = quote_params[:totalprice]
+     @quote.FullName = quote_params[:Full_Name]
+     @quote.Phone = quote_params[:Phone_Number]
+     @quote.Email = quote_params[:Email]
+
+     @quote.Nb_compagnie = quote_params[:nbcompagnie]
+     @quote.Building_Type = quote_params[:buildingSelect]
+     @quote.Project_Name = quote_params[:Project_Name]
+     @quote.Nb_Appartement = quote_params[:nappartement]
+     @quote.Nb_Floor = quote_params[:nfloor]
+     @quote.Nb_Basement = quote_params[:nbasement]
+     @quote.Nb_Parking = quote_params[:nbpark]
+     @quote.Nb_OccupantPerFloor = quote_params[:MaxOccCorp]
+     @quote.Building_active = quote_params[:hybrid_active]
+
 
    end
 
