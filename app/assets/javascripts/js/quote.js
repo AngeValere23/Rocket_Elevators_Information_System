@@ -275,7 +275,7 @@ function sendRequest() {
 
   $.ajax({
     type: "POST",
-    url: "https://old-rocket-elevators.frederic2ec.tk/",
+    url: "https://old-rocket-elevators.frederic2ec.tk/quote",
     data: sentData,
   }).done(function (data) {
     updatePricing(data);
