@@ -22,6 +22,7 @@ $(document).ready(function () {
     hideAllForm();
     clearForm();
     const value = $("#building-select").val();
+    fixRequired(value);
     if (value === "Residential") {
       $("#residential-form").show();
     } else if (value === "Commercial") {
@@ -258,6 +259,32 @@ function calCorHybEl(event) {
   service = event.data.type;
 
   sendRequest();
+}
+
+function fixRequired(type) {
+  // Residential
+  $("#residential-apartment").attr("required", type === "Residential");
+  $("#residential-floor").attr("required", type === "Residential");
+  $("#residential-basement").attr("required", type === "Residential");
+  // Commercial
+  $("#commercial-business").attr("required", type === "Commercial");
+  $("#commercial-floor").attr("required", type === "Commercial");
+  $("#commercial-basement").attr("required", type === "Commercial");
+  $("#commercial-parking").attr("required", type === "Commercial");
+  $("#commercial-shaft").attr("required", type === "Commercial");
+  // Corporate
+  $("#corporate-companies").attr("required", type === "Corporate");
+  $("#corporate-floor").attr("required", type === "Corporate");
+  $("#corporate-basement").attr("required", type === "Corporate");
+  $("#corporate-parking").attr("required", type === "Corporate");
+  $("#corporate-occupant").attr("required", type === "Corporate");
+  // Hybrid
+  $("#hybrid-business").attr("required", type === "Hybrid");
+  $("#hybrid-floor").attr("required", type === "Hybrid");
+  $("#hybrid-basement").attr("required", type === "Hybrid");
+  $("#hybrid-parking").attr("required", type === "Hybrid");
+  $("#hybrid-occupant").attr("required", type === "Hybrid");
+  $("#hybrid-active").attr("required", type === "Hybrid");
 }
 
 // send AJAX request to Express

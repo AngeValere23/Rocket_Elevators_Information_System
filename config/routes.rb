@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   get '/quote' => 'pages#quote'
 
+  post '/quote' => 'pages#post_quote'
+
   get "pages/index"
 end

@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_141909) do
     t.string "quality"
     t.integer "nbapartment"
     t.integer "nbfloor"
-    t.integer "nbbasement"
+    t.string "nbbasement"
     t.integer "nbbusiness"
     t.integer "nbparking"
     t.integer "nbshaft"

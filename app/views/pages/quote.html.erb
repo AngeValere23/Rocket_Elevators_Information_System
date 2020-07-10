@@ -23,14 +23,14 @@
                     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                     <fieldset>
                         <div class="row">
-                            <div class="col-md-4"><label for="contact:name">Full Name</label><input name="fullname" class="form-control" type="text" value="" id="building-name" /></div>
-                            <div class="col-md-4"><label for="contact:email">E-mail Address</label><input name="email" class="form-control" type="email" value="" id="building-email" /></div>
-                            <div class="col-md-4"><label for="contact:phone">Phone</label><input name="phone" class="form-control" type="text" value="" id="building-phone" /></div>
+                            <div class="col-md-4"><label for="contact:name">Full Name</label><input required="required" name="fullname" class="form-control" type="text" value="" id="building-name" /></div>
+                            <div class="col-md-4"><label for="contact:email">E-mail Address</label><input required="required" name="email" class="form-control" type="email" value="" id="building-email" /></div>
+                            <div class="col-md-4"><label for="contact:phone">Phone</label><input required="required" name="phone" class="form-control" type="text" value="" id="building-phone" /></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4"><label for="contact:subject">Business Name</label><input name="businessname" class="form-control" type="text" value="" id="building-business" /></div>
-                            <div class="col-md-4"><label for="contact:subject">Project Name</label><input name="projectname" class="form-control" type="text" value="" id="building-project" /></div>
-                            <div class="col-md-4"><label for="contact_department">Building Type</label><select name="buildingtype" class="form-control pointer" id="building-select">
+                            <div class="col-md-4"><label for="contact:subject">Business Name</label><input required="required" name="businessname" class="form-control" type="text" value="" id="building-business" /></div>
+                            <div class="col-md-4"><label for="contact:subject">Project Name</label><input required="required" name="projectname" class="form-control" type="text" value="" id="building-project" /></div>
+                            <div class="col-md-4"><label for="contact_department">Building Type</label><select required="required" name="buildingtype" class="form-control pointer" id="building-select">
                                     <option value="">--- Select ---</option>
                                     <option value="Residential">Residential</option>
                                     <option value="Commercial">Commercial</option>
@@ -41,45 +41,45 @@
                         <hr />
                         <!-- Residential-->
                         <div class="row" id="residential-form">
-                            <div class="col-md-4"><label for="contact:subject">Number of apartment</label><input name="nbapartment" class="form-control" type="number" value="" id="residential-apartment" /></div>
-                            <div class="col-md-4"><label for="contact:subject">Number of floor</label><input name="nbfloor" class="form-control" type="number" value="" id="residential-floor" /></div>
-                            <div class="col-md-4"><label for="contact:subject">Number of basement</label><input name="nbbasement" class="form-control" type="number" value="" id="residential-basement" /></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of apartment</label><input required="required" name="nbapartment" class="form-control" type="number" value="" id="residential-apartment" /></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of floor</label><input required="required" name="nbfloor" class="form-control" type="number" value="" id="residential-floor" /></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of basement</label><input required="required" name="nbbasement" class="form-control" type="number" value="" id="residential-basement" /></div>
                         </div>
                         <!-- Commercial-->
                         <div id="commercial-form">
                             <div class="row">
-                                <div class="col-md-4"><label for="contact:subject">Number of business</label><input name="nbbusiness" class="form-control" type="number" value="" id="commercial-business" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input name="nbfloor" class="form-control" type="number" value="" id="commercial-floor" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input name="nbbasement" class="form-control" type="number" value="" id="commercial-basement" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of business</label><input required="required" name="nbbusiness" class="form-control" type="number" value="" id="commercial-business" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input required="required" name="nbfloor" class="form-control" type="number" value="" id="commercial-floor" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input required="required" name="nbbasement" class="form-control" type="number" value="" id="commercial-basement" /></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6"><label for="contact:subject">Number of parking</label><input name="nbparking" class="form-control" type="number" value="" id="commercial-parking" /></div>
-                                <div class="col-md-6"><label for="contact:subject">Number of shaft</label><input name="nbshaft" class="form-control" type="number" value="" id="commercial-shaft" /></div>
+                                <div class="col-md-6"><label for="contact:subject">Number of parking</label><input required="required" name="nbparking" class="form-control" type="number" value="" id="commercial-parking" /></div>
+                                <div class="col-md-6"><label for="contact:subject">Number of shaft</label><input required="required" name="nbshaft" class="form-control" type="number" value="" id="commercial-shaft" /></div>
                             </div>
                         </div>
                         <!-- Corporate-->
                         <div id="corporate-form">
                             <div class="row">
-                                <div class="col-md-4"><label for="contact:subject">Number of companies</label><input name="nbcompanies" class="form-control" type="number" value="" id="corporate-companies" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input name="nbfloor" class="form-control" type="number" value="" id="corporate-floor" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input name="nbbasement" class="form-control" type="number" value="" id="corporate-basement" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of companies</label><input required="required" name="nbcompanies" class="form-control" type="number" value="" id="corporate-companies" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input required="required" name="nbfloor" class="form-control" type="number" value="" id="corporate-floor" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input required="required" name="nbbasement" class="form-control" type="number" value="" id="corporate-basement" /></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6"><label for="contact:subject">Number of parking</label><input name="nbparking" class="form-control" type="number" value="" id="corporate-parking" /></div>
-                                <div class="col-md-6"><label for="contact:subject">Number of occupant/floor</label><input name="nboccupant" class="form-control" type="number" value="" id="corporate-occupant" /></div>
+                                <div class="col-md-6"><label for="contact:subject">Number of parking</label><input required="required" name="nbparking" class="form-control" type="number" value="" id="corporate-parking" /></div>
+                                <div class="col-md-6"><label for="contact:subject">Number of occupant/floor</label><input required="required" name="nboccupant" class="form-control" type="number" value="" id="corporate-occupant" /></div>
                             </div>
                         </div>
                         <!-- Hybrid-->
                         <div id="hybrid-form">
                             <div class="row">
-                                <div class="col-md-4"><label for="contact:subject">Number of business</label><input name="nbbusiness" class="form-control" type="number" value="" id="hybrid-business" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input name="nbfloor" class="form-control" type="number" value="" id="hybrid-floor" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input name="nbbasement" class="form-control" type="number" value="" id="hybrid-basement" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of business</label><input required="required" name="nbbusiness" class="form-control" type="number" value="" id="hybrid-business" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input required="required" name="nbfloor" class="form-control" type="number" value="" id="hybrid-floor" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input required="required" name="nbbasement" class="form-control" type="number" value="" id="hybrid-basement" /></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4"><label for="contact:subject">Number of parking</label><input name="nbparking" class="form-control" type="number" value="" id="hybrid-parking" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of occupant/floor</label><input name="nboccupant" class="form-control" type="number" value="" id="hybrid-occupant" /></div>
-                                <div class="col-md-4"><label for="contact_department">Active hours/day</label><select name="activehours" class="form-control pointer" id="hybrid-active">
+                                <div class="col-md-4"><label for="contact:subject">Number of parking</label><input required="required" name="nbparking" class="form-control" type="number" value="" id="hybrid-parking" /></div>
+                                <div class="col-md-4"><label for="contact:subject">Number of occupant/floor</label><input required="required" name="nboccupant" class="form-control" type="number" value="" id="hybrid-occupant" /></div>
+                                <div class="col-md-4"><label for="contact_department">Active hours/day</label><select required="required" name="activehours" class="form-control pointer" id="hybrid-active">
                                         <option value="">--- Select ---</option>
                                         <option value="0">0</option>
                                         <option value="1">1</option>
@@ -112,9 +112,9 @@
                         <!-- Quality-->
                         <div class="row">
                             <div class="col-md-12">
-                                <label class="radio"><input type="radio" name="quality" value="standard" checked="checked" /><i></i>Standard</label>
-                                <label class="radio"><input type="radio" name="quality" value="premium" /><i></i>Premium</label>
-                                <label class="radio"><input type="radio" name="quality" value="excelium" /><i></i>Excelium</label>
+                                <label class="radio"><input required="required" type="radio" name="quality" value="standard" checked="checked" /><i></i>Standard</label>
+                                <label class="radio"><input required="required" type="radio" name="quality" value="premium" /><i></i>Premium</label>
+                                <label class="radio"><input required="required" type="radio" name="quality" value="excelium" /><i></i>Excelium</label>
                             </div>
                         </div>
                     </fieldset>

@@ -1,23 +1,16 @@
 class PagesController < ApplicationController
 
-    def index
+  def post_quote
+    # Get data from the form and omit unecessary data
+    quote_params = params.except(:authenticity_token, :controller, :action)
+    quote_params.permit!
 
-    end
+    #Save quote
+    @quote = Quote.create(quote_params)
+    @quote.save!
 
-    def services
-      
-    end
-  
-    def residential
-  
-    end
-  
-    def corporate
-  
-    end
-
-    def quote
-
-    end
-  
+    # Redirect to confirm
+    redirect_to root_path
   end
+  
+end
