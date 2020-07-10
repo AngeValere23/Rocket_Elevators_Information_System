@@ -6282,4 +6282,5 @@ function _loadPopperBS4() {
       fe
     );
   });
+  //# sourceMappingURL=popper.min.js.map
 }
