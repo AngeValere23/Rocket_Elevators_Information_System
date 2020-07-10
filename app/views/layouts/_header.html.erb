@@ -19,11 +19,11 @@
                         <li><%= link_to "Contact", root_path(anchor: "contact") %></li>
                         <% if current_user.present? %>
                         <% if is_employee? %>
-                        <li><a href="http://localhost:3000/backoffice">Backoffice</a></li>
+                        <li><a href="/backoffice">Backoffice</a></li>
                         <%end%>
                         <%else%>
-                        <li><a href="http://localhost:3000/users/sign_in">Sign in</a></li>
-                        <li><a href="http://localhost:3000/users/sign_up">Sign up</a></li>
+                        <li><a href="/users/sign_in">Sign in</a></li>
+                        <li><a href="/users/sign_up">Sign up</a></li>
                         <% end %>
                     </ul>
                 </nav>
