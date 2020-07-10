@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    skip_before_action :verify_authenticity_token
 
     def is_employee?
         if current_user.present? then
