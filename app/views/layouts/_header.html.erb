@@ -17,6 +17,14 @@
                         <li><%= link_to "News", root_path(anchor: "news") %></li>
                         <li><%= link_to "Clients", root_path(anchor: "clients") %></li>
                         <li><%= link_to "Contact", root_path(anchor: "contact") %></li>
+                        <% if current_user.present? %>
+                        <% if is_employee? %>
+                        <li><a href="http://localhost:3000/backoffice">Backoffice</a></li>
+                        <%end%>
+                        <%else%>
+                        <li><a href="http://localhost:3000/users/sign_in">Sign in</a></li>
+                        <li><a href="http://localhost:3000/users/sign_up">Sign up</a></li>
+                        <% end %>
                     </ul>
                 </nav>
             </div>
