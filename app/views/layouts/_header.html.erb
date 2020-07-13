@@ -17,15 +17,20 @@
                         <li><%= link_to "News", root_path(anchor: "news") %></li>
                         <li><%= link_to "Clients", root_path(anchor: "clients") %></li>
                         <li><%= link_to "Contact", root_path(anchor: "contact") %></li>
-                        <% if current_user.present? %>
-                        <% if is_employee? %>
-                        <li><a href="/backoffice">Backoffice</a></li>
-                        <%end%>
-                        <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-                        <%else%>
-                        <li><a href="/users/sign_in">Sign in</a></li>
-                        <li><a href="/users/sign_up">Sign up</a></li>
-                        <% end %>
+                        <li class="dropdown"><a class="dropdown-toggle">Account</a>
+                            <ul class="dropdown-menu">
+                                <% if current_user.present? %>
+                                <% if is_employee? %>
+                                <li><%= link_to "Backoffice", rails_admin_path %></li>
+                                <%end%>
+                                <li><%= link_to('Edit account', edit_user_registration_path) %></li>
+                                <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+                                <%else%>
+                                <li><%= link_to "Sign in", new_user_session_path %></li>
+                                <li><%= link_to "Sign up", new_user_registration_path %></li>
+                                <% end %>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
