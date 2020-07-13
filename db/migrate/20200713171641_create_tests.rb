@@ -1,0 +1,9 @@
+class CreateTests < ActiveRecord::Migration[5.2]
+  def change
+    create_table :tests do |t|
+      t.reference :Building
+
+      t.timestamps
+    end
+  end
+end
