@@ -3,21 +3,17 @@
 one:
   Building: one
   PropertyType: MyString
-  Status: 
-  Employee: 
-  DateOfCommissioning: 2020-07-13 14:39:23
-  DateOfLastInspec: 2020-07-13 14:39:23
+  Status: MyString
+  Employee: one
+  DateOfCommissioning: 2020-07-13 15:09:07
+  DateOfLastInspec: 2020-07-13 15:09:07
   CertficatOfOperation: 
-  Informations: MyString
-  Notes: MyText
 
 two:
   Building: two
   PropertyType: MyString
-  Status: 
-  Employee: 
-  DateOfCommissioning: 2020-07-13 14:39:23
-  DateOfLastInspec: 2020-07-13 14:39:23
+  Status: MyString
+  Employee: two
+  DateOfCommissioning: 2020-07-13 15:09:07
+  DateOfLastInspec: 2020-07-13 15:09:07
   CertficatOfOperation: 
-  Informations: MyString
-  Notes: MyText
