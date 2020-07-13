@@ -131,10 +131,10 @@ function Init(is_ajax) {
 
   /** Bootstrap Tooltip **/
 
-  jQuery("[data-toggle=tooltip]").tooltip();
+  // jQuery("[data-toggle=tooltip]").tooltip();
 
   /** Bootstrap Popover **/
-  jQuery("[data-toggle=popover]").popover();
+  // jQuery("[data-toggle=popover]").popover();
 }
 
 /** Preloader
