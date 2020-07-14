@@ -10,16 +10,122 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_141909) do
+ActiveRecord::Schema.define(version: 2020_07_13_190907) do
+
+  create_table "adresses", force: :cascade do |t|
+    t.string "TypeOfAdress"
+    t.string "Status"
+    t.string "Entity"
+    t.string "NumberAndStreet"
+    t.string "string"
+    t.string "SuiteOrApart"
+    t.string "integer"
+    t.string "City"
+    t.string "PostalCode"
+    t.string "Country"
+    t.text "Notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "batteries", force: :cascade do |t|
+    t.integer "Building_id"
+    t.string "PropertyType"
+    t.string "Status"
+    t.integer "Employee_id"
+    t.datetime "DateOfCommissioning"
+    t.datetime "DateOfLastInspec"
+    t.binary "CertficatOfOperation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Building_id"], name: "index_batteries_on_Building_id"
+    t.index ["Employee_id"], name: "index_batteries_on_Employee_id"
+  end
+
+  create_table "buildings", force: :cascade do |t|
+    t.integer "Customer_id"
+    t.integer "Adress_id"
+    t.string "BuildingAdmFullName"
+    t.string "BuildingAdmEmail"
+    t.string "BuildingAdmPhone"
+    t.string "BuildingTechFullName"
+    t.string "BuildingTechEmail"
+    t.string "BuildingTechPhone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Adress_id"], name: "index_buildings_on_Adress_id"
+    t.index ["Customer_id"], name: "index_buildings_on_Customer_id"
+  end
+
+  create_table "columns", force: :cascade do |t|
+    t.integer "Batterie_id"
+    t.string "ProppertyType"
+    t.string "NumberOfFloor"
+    t.string "integer"
+    t.string "Status"
+    t.string "Informations"
+    t.string "string"
+    t.text "Notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Batterie_id"], name: "index_columns_on_Batterie_id"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.bigint "User_id"
+    t.string "CompanyName"
+    t.bigint "Adress_id"
+    t.string "FullNameOfContact"
+    t.string "CompanyPhone"
+    t.string "EmailOfContact"
+    t.string "FullNameOfServiceTechAutority"
+    t.string "TechnicalAutorityPhone"
+    t.string "TechnicalManagerEmail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Adress_id"], name: "index_customers_on_Adress_id"
+    t.index ["User_id"], name: "index_customers_on_User_id"
+  end
+
+  create_table "elevators", force: :cascade do |t|
+    t.integer "Column_id"
+    t.string "serialNumber"
+    t.string "Model"
+    t.string "PropertyType"
+    t.string "Status"
+    t.datetime "DateOfCommissioning"
+    t.datetime "DateOflastInspection"
+    t.binary "CertificatOfInpection"
+    t.string "Information"
+    t.text "Notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Column_id"], name: "index_elevators_on_Column_id"
+  end
 
   create_table "employees", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "lastname"
     t.string "firstname"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_employees_on_user_id"
+  end
+
+  create_table "leads", force: :cascade do |t|
+    t.string "FullName"
+    t.string "CompagnyName"
+    t.string "Email"
+    t.string "Phone"
+    t.string "ProjectName"
+    t.string "ProjectDesc"
+    t.string "text"
+    t.string "Departement"
+    t.text "Message"
+    t.binary "AttachedFile"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "quotes", force: :cascade do |t|
@@ -32,7 +138,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_141909) do
     t.string "quality"
     t.integer "nbapartment"
     t.integer "nbfloor"
-    t.string "nbbasement"
+    t.integer "nbbasement"
     t.integer "nbbusiness"
     t.integer "nbparking"
     t.integer "nbshaft"
