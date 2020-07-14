@@ -2,7 +2,7 @@ class CreateLeads < ActiveRecord::Migration[5.2]
   def change
     create_table :leads do |t|
       t.string :FullName
-      t.string :CompagnyName
+      t.string :CompanyName
       t.string :Email
       t.string :Phone
       t.string :ProjectName
@@ -10,7 +10,10 @@ class CreateLeads < ActiveRecord::Migration[5.2]
       t.string :text
       t.string :Departement
       t.text :Message
-      t.binary :AttachedFile
+      t.string :filename
+      t.string :content_type
+      t.binary :file_contents
+      t.string :download
 
       t.timestamps
     end

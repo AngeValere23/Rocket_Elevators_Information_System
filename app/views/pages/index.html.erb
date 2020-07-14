@@ -347,37 +347,38 @@
         <div class="row">
             <div class="col-md-8 col-sm-8">
                 <h3>Drop us a line or just say<strong><em> Hello!</em></strong></h3>
-                <form action="php/contact.php" method="post" enctype="multipart/form-data">
-                    <fieldset><input type="hidden" name="action" value="contact_send" />
-                        <div class="row">
-                            <div class="col-md-4"><label for="contact:name">Full Name</label><input class="form-control" required="required" type="text" value="" id="contact-name" /></div>
-                            <div class="col-md-4"><label for="contact:email">E-mail Address</label><input class="form-control" required="required" type="email" value="" id="contact-email" /></div>
-                            <div class="col-md-4"><label for="contact:phone">Phone</label><input class="form-control" type="text" value="" id="contact-phone" /></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4"><label for="contact:subject">Business Name</label><input class="form-control" required="required" type="text" value="" id="contact-business" /></div>
-                            <div class="col-md-4"><label for="contact:subject">Project Name</label><input class="form-control" required="required" type="text" value="" id="contact-project" /></div>
-                            <div class="col-md-4"><label for="contact_department">Department</label><select class="form-control pointer" id="contact-department">
-                                    <option value="">--- Select ---</option>
-                                    <option value="Marketing">Question</option>
-                                    <option value="Webdesign">Residential</option>
-                                    <option value="Architecture">Corporate</option>
-                                </select></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12"><label for="contact:subject">Project Description</label><input class="form-control" required="required" type="text" value="" id="contact-description" /></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12"><label for="contact:message">Message</label><textarea class="form-control" required="required" maxlength="1000" rows="8" id="contact-message"></textarea></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12"><label for="contact:attachment">File Attachment</label><input class="custom-file-upload" type="file" id="contact-attachment" data-btn-text="Select a File" /><small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small></div>
-                        </div>
-                    </fieldset>
+                <%= form_with(url: "/lead", :html => {:class => 'cartContent clearfix'}, multipart: true ) do %>
+                <fieldset><input type="hidden" name="action" value="contact_send" />
                     <div class="row">
-                        <div class="col-md-12"><button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> SEND MESSAGE</button></div>
+                        <div class="col-md-4"><label for="contact:name">Full Name</label><%= text_field_tag('FullName', nil, id: 'contact-name', required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact:email">E-mail Address</label><%= email_field_tag('Email', nil, id: 'contact-email', required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact:phone">Phone</label><%= telephone_field_tag('Phone', nil, id: 'contact-phone', required: "required", class: "form-control") %></div>
                     </div>
-                </form>
+                    <div class="row">
+                        <div class="col-md-4"><label for="contact:subject">Business Name</label><%= text_field_tag('CompanyName', nil, id: 'contact-business', required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact:subject">Project Name</label><%= text_field_tag('ProjectName', nil, id: 'contact-project', required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact_department">Department</label><%= select_tag('Departement', options_for_select([['--- Select ---', ''], ['Question'],['Residential'], ['Corporate']]), required: "required", class: "form-control pointer", id: 'contact-department') %></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"><label for="contact:subject">Project Description</label><%= text_field_tag('ProjectDesc', nil, id: 'contact-description', required: "required", class: "form-control") %></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"><label for="contact:message">Message</label><%= text_area_tag('Message', nil, id: 'contact-message', required: "required", class: "form-control", rows: 8, maxlength: 1000) %></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"><label for="contact:attachment">File Attachment</label>
+                            <%= file_field_tag 'AttachedFile', class: 'custom-file-upload', id: 'contact-attachment', 'data-btn-text': "Select a File", required: "required" %>
+                            <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small></div>
+                    </div>
+                </fieldset>
+                <div class="row">
+                    <div class="col-md-12">
+                        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+                        <i class="fa fa-check"></i> SEND MESSAGE
+                        <% end %>
+                    </div>
+                </div>
+                <% end %>
             </div>
             <!-- Info-->
             <div class="col-md-4 col-sm-4">

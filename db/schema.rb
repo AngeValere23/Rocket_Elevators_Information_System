@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 2020_07_13_190907) do
 
   create_table "leads", force: :cascade do |t|
     t.string "FullName"
-    t.string "CompagnyName"
+    t.string "CompanyName"
     t.string "Email"
     t.string "Phone"
     t.string "ProjectName"
@@ -123,7 +123,10 @@ ActiveRecord::Schema.define(version: 2020_07_13_190907) do
     t.string "text"
     t.string "Departement"
     t.text "Message"
-    t.binary "AttachedFile"
+    t.string "filename"
+    t.string "content_type"
+    t.binary "file_contents"
+    t.string "download"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
 
+  post '/lead' => 'pages#post_lead'
+
+  get '/lead(.:id)' => 'pages#download_lead'
+
   get '/residential' => 'pages#residential'
 
   get '/corporate' => 'pages#corporate'
