@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   post '/quote' => 'pages#submit_quote'
 
+  post '/contact' => 'pages#contact'
+
   get '/residential' => 'pages#residential'
 
   get '/corporate' => 'pages#corporate'
@@ -14,4 +16,5 @@ Rails.application.routes.draw do
   get '/quote' => 'pages#quote'
 
   get "pages/index"
+  
 end

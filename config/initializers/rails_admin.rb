@@ -39,6 +39,11 @@ RailsAdmin.config do |config|
     # history_show
   end
 
+  config.actions do
+    all # NB: comment out this line for RailsAdmin < 0.6.0
+    charts
+  end
+
   config.authenticate_with do
     warden.authenticate! scope: :user
   end

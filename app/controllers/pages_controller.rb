@@ -16,6 +16,9 @@ class PagesController < ApplicationController
 
     end
 
+    def contact
+
+    end
 
      def new
        @quote = Quote.new #Generate data blank new form

@@ -77,3 +77,5 @@ gem 'devise'
 gem 'rails_admin', '~> 2.0'
 
 gem 'sqlite3'
+
+gem 'rails_admin_charts'
