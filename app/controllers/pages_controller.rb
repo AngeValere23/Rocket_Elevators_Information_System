@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def post_quote
     # Get data from the form and omit unecessary data
-    quote_params = params.except(:authenticity_token, :controller, :action)
+    quote_params = params.except(:authenticity_token, :controller, :action, :utf8)
     quote_params.permit!
 
     #Save quote

@@ -19,112 +19,78 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-sm-8">
-                <form class="cartContent clearfix" accept-charset="UTF-8" method="post" action="/quote">
-                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                    <fieldset>
+                <%= form_with(url: "/quote", :html => {:class => 'cartContent clearfix'} ) do %>
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-4"><label for="contact:name">Full Name</label><%= text_field_tag('fullname', nil, id: 'building-name', required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact:email">E-mail Address</label><%= email_field_tag('email', nil, id: 'building-email',required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact:phone">Phone</label><%= telephone_field_tag('phone', nil, id: 'building-phone', required: "required", class: "form-control") %></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"><label for="contact:subject">Business Name</label><%= text_field_tag('businessname', nil, id: 'building-business', required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact:subject">Project Name</label><%= text_field_tag('projectname',nil, id: 'building-project', required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact_department">Building Type</label><%= select_tag('buildingtype', options_for_select([['--- Select ---', ''], ['Residential', 'Residential'],['Commercial', 'Commercial'], ['Corporate', 'Corporate'], ['Hybrid', 'Hybrid']]), required: "required", class: "form-control pointer", id: 'building-select') %></div>
+                    </div>
+                    <hr />
+                    <!-- Residential-->
+                    <div class="row" id="residential-form">
+                        <div class="col-md-4"><label for="contact:subject">Number of apartment</label><%= number_field_tag('nbapartment',nil, id: 'residential-apartment', required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact:subject">Number of floor</label><%= number_field_tag('nbfloor',nil, id: 'residential-floor', required: "required", class: "form-control") %></div>
+                        <div class="col-md-4"><label for="contact:subject">Number of basement</label><%= number_field_tag('nbbasement',nil, id: 'residential-basement', required: "required", class: "form-control") %></div>
+                    </div>
+                    <!-- Commercial-->
+                    <div id="commercial-form">
                         <div class="row">
-                            <div class="col-md-4"><label for="contact:name">Full Name</label><input required="required" name="fullname" class="form-control" type="text" value="" id="building-name" /></div>
-                            <div class="col-md-4"><label for="contact:email">E-mail Address</label><input required="required" name="email" class="form-control" type="email" value="" id="building-email" /></div>
-                            <div class="col-md-4"><label for="contact:phone">Phone</label><input required="required" name="phone" class="form-control" type="text" value="" id="building-phone" /></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of business</label><%= number_field_tag('nbbusiness',nil, id: 'commercial-business', required: "required", class: "form-control") %></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of floor</label><%= number_field_tag('nbfloor',nil, id: 'commercial-floor', required: "required", class: "form-control") %></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of basement</label><%= number_field_tag('nbbasement',nil, id: 'commercial-basement', required: "required", class: "form-control") %></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4"><label for="contact:subject">Business Name</label><input required="required" name="businessname" class="form-control" type="text" value="" id="building-business" /></div>
-                            <div class="col-md-4"><label for="contact:subject">Project Name</label><input required="required" name="projectname" class="form-control" type="text" value="" id="building-project" /></div>
-                            <div class="col-md-4"><label for="contact_department">Building Type</label><select required="required" name="buildingtype" class="form-control pointer" id="building-select">
-                                    <option value="">--- Select ---</option>
-                                    <option value="Residential">Residential</option>
-                                    <option value="Commercial">Commercial</option>
-                                    <option value="Corporate">Corporate</option>
-                                    <option value="Hybrid">Hybrid</option>
-                                </select></div>
+                            <div class="col-md-6"><label for="contact:subject">Number of parking</label><%= number_field_tag('nbparking',nil, id: 'commercial-parking', required: "required", class: "form-control") %></div>
+                            <div class="col-md-6"><label for="contact:subject">Number of shaft</label><%= number_field_tag('nbshaft',nil, id: 'commercial-shaft', required: "required", class: "form-control") %></div>
                         </div>
-                        <hr />
-                        <!-- Residential-->
-                        <div class="row" id="residential-form">
-                            <div class="col-md-4"><label for="contact:subject">Number of apartment</label><input required="required" name="nbapartment" class="form-control" type="number" value="" id="residential-apartment" /></div>
-                            <div class="col-md-4"><label for="contact:subject">Number of floor</label><input required="required" name="nbfloor" class="form-control" type="number" value="" id="residential-floor" /></div>
-                            <div class="col-md-4"><label for="contact:subject">Number of basement</label><input required="required" name="nbbasement" class="form-control" type="number" value="" id="residential-basement" /></div>
-                        </div>
-                        <!-- Commercial-->
-                        <div id="commercial-form">
-                            <div class="row">
-                                <div class="col-md-4"><label for="contact:subject">Number of business</label><input required="required" name="nbbusiness" class="form-control" type="number" value="" id="commercial-business" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input required="required" name="nbfloor" class="form-control" type="number" value="" id="commercial-floor" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input required="required" name="nbbasement" class="form-control" type="number" value="" id="commercial-basement" /></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6"><label for="contact:subject">Number of parking</label><input required="required" name="nbparking" class="form-control" type="number" value="" id="commercial-parking" /></div>
-                                <div class="col-md-6"><label for="contact:subject">Number of shaft</label><input required="required" name="nbshaft" class="form-control" type="number" value="" id="commercial-shaft" /></div>
-                            </div>
-                        </div>
-                        <!-- Corporate-->
-                        <div id="corporate-form">
-                            <div class="row">
-                                <div class="col-md-4"><label for="contact:subject">Number of companies</label><input required="required" name="nbcompanies" class="form-control" type="number" value="" id="corporate-companies" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input required="required" name="nbfloor" class="form-control" type="number" value="" id="corporate-floor" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input required="required" name="nbbasement" class="form-control" type="number" value="" id="corporate-basement" /></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6"><label for="contact:subject">Number of parking</label><input required="required" name="nbparking" class="form-control" type="number" value="" id="corporate-parking" /></div>
-                                <div class="col-md-6"><label for="contact:subject">Number of occupant/floor</label><input required="required" name="nboccupant" class="form-control" type="number" value="" id="corporate-occupant" /></div>
-                            </div>
-                        </div>
-                        <!-- Hybrid-->
-                        <div id="hybrid-form">
-                            <div class="row">
-                                <div class="col-md-4"><label for="contact:subject">Number of business</label><input required="required" name="nbbusiness" class="form-control" type="number" value="" id="hybrid-business" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of floor</label><input required="required" name="nbfloor" class="form-control" type="number" value="" id="hybrid-floor" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of basement</label><input required="required" name="nbbasement" class="form-control" type="number" value="" id="hybrid-basement" /></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4"><label for="contact:subject">Number of parking</label><input required="required" name="nbparking" class="form-control" type="number" value="" id="hybrid-parking" /></div>
-                                <div class="col-md-4"><label for="contact:subject">Number of occupant/floor</label><input required="required" name="nboccupant" class="form-control" type="number" value="" id="hybrid-occupant" /></div>
-                                <div class="col-md-4"><label for="contact_department">Active hours/day</label><select required="required" name="activehours" class="form-control pointer" id="hybrid-active">
-                                        <option value="">--- Select ---</option>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                    </select></div>
-                            </div>
-                        </div>
-                        <!-- Quality-->
+                    </div>
+                    <!-- Corporate-->
+                    <div id="corporate-form">
                         <div class="row">
-                            <div class="col-md-12">
-                                <label class="radio"><input required="required" type="radio" name="quality" value="standard" checked="checked" /><i></i>Standard</label>
-                                <label class="radio"><input required="required" type="radio" name="quality" value="premium" /><i></i>Premium</label>
-                                <label class="radio"><input required="required" type="radio" name="quality" value="excelium" /><i></i>Excelium</label>
-                            </div>
+                            <div class="col-md-4"><label for="contact:subject">Number of companies</label><%= number_field_tag('nbcompanies',nil, id: 'corporate-companies', required: "required", class: "form-control") %></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of floor</label><%= number_field_tag('nbfloor',nil, id: 'corporate-floor', required: "required", class: "form-control") %></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of basement</label><%= number_field_tag('nbbasement',nil, id: 'corporate-basement', required: "required", class: "form-control") %></div>
                         </div>
-                    </fieldset>
-                    <input type="hidden" id="nbelevator" name="nbelevator" value="">
-                    <input type="hidden" id="elevatorprice" name="elevatorprice" value="">
-                    <input type="hidden" id="subtotal" name="subtotal" value="">
-                    <input type="hidden" id="installfee" name="installfee" value="">
-                    <input type="hidden" id="total" name="total" value="">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                        <div class="row">
+                            <div class="col-md-6"><label for="contact:subject">Number of parking</label><%= number_field_tag('nbparking',nil, id: 'corporate-parking', required: "required", class: "form-control") %></div>
+                            <div class="col-md-6"><label for="contact:subject">Number of occupant/floor</label><%= number_field_tag('nboccupant',nil, id: 'corporate-occupant', required: "required", class: "form-control") %></div>
+                        </div>
+                    </div>
+                    <!-- Hybrid-->
+                    <div id="hybrid-form">
+                        <div class="row">
+                            <div class="col-md-4"><label for="contact:subject">Number of business</label><%= number_field_tag('nbbusiness',nil, id: 'hybrid-business', required: "required", class: "form-control") %></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of floor</label><%= number_field_tag('nbfloor',nil, id: 'hybrid-floor', required: "required", class: "form-control") %></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of basement</label><%= number_field_tag('nbbasement',nil, id: 'hybrid-basement', required: "required", class: "form-control") %></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"><label for="contact:subject">Number of parking</label><%= number_field_tag('nbparking',nil, id: 'hybrid-parking', required: "required", class: "form-control") %></div>
+                            <div class="col-md-4"><label for="contact:subject">Number of occupant/floor</label><%= number_field_tag('nboccupant',nil, id: 'hybrid-occupant', required: "required", class: "form-control") %></div>
+                            <div class="col-md-4"><label for="contact_department">Active hours/day</label><%= select_tag('activehours', options_for_select([['--- Select ---', ''], [0],[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17],[18],[19],[20],[21],[22],[23],[24]]), required: "required", class: "form-control pointer", id: 'hybrid-active') %></div>
+                        </div>
+                    </div>
+                    <!-- Quality-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="radio"><%= radio_button_tag('quality', 'standard', true, required: 'required') %><i></i>Standard</label>
+                            <label class="radio"><%= radio_button_tag('quality', 'premium', false, required: 'required') %><i></i>Premium</label>
+                            <label class="radio"><%= radio_button_tag('quality', 'excelium', false, required: 'required') %><i></i>Excelium</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <input type="hidden" id="nbelevator" name="nbelevator" value="">
+                <input type="hidden" id="elevatorprice" name="elevatorprice" value="">
+                <input type="hidden" id="subtotal" name="subtotal" value="">
+                <input type="hidden" id="installfee" name="installfee" value="">
+                <input type="hidden" id="total" name="total" value="">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <% end %>
             </div>
             <div class="col-lg-3 col-sm-4">
                 <div class="toggle-transparent toggle-bordered-full clearfix">
