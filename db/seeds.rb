@@ -30,3 +30,9 @@ Employee.create(:user_id => mlortie.id, :lastname => "Lortie", :firstname => "Ma
 Employee.create(:user_id => tcarrier.id, :lastname => "Carrier", :firstname => "Thomas", :title => "Engineer")
 
 p "Created #{Employee.count} employee"
+
+10.times { Lead.create({
+             FullName: Faker::Name.name,
+             CompagnyName: Faker::Company.name,
+             Email: Faker::Internet.email
+         }) }

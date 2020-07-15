@@ -32,7 +32,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -79,3 +78,5 @@ gem 'rails_admin', '~> 2.0'
 gem 'sqlite3'
 
 gem 'rails_admin_charts'
+
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
