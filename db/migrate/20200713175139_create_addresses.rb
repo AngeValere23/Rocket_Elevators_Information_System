@@ -1,13 +1,11 @@
-class CreateAdresses < ActiveRecord::Migration[5.2]
+class CreateAddresses < ActiveRecord::Migration[5.2]
   def change
     create_table :adresses do |t|
-      t.string :TypeOfAdress
+      t.string :TypeOfAddress
       t.string :Status
       t.string :Entity
       t.string :NumberAndStreet
-      t.string :string
-      t.string :SuiteOrApart
-      t.string :integer
+      t.string :SuiteOrAppart
       t.string :City
       t.string :PostalCode
       t.string :Country

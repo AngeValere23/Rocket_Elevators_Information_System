@@ -1,4 +1,7 @@
 class Building < ApplicationRecord
-  belongs_to :Customer
-  belongs_to :Adress
+  belongs_to :customer
+  belongs_to :address
+
+  has_one :building_detail
+  has_one :battery
 end

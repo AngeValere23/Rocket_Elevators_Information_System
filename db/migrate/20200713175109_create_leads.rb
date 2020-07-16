@@ -7,8 +7,7 @@ class CreateLeads < ActiveRecord::Migration[5.2]
       t.string :Phone
       t.string :ProjectName
       t.string :ProjectDesc
-      t.string :text
-      t.string :Departement
+      t.string :Department
       t.text :Message
       t.string :filename
       t.string :content_type

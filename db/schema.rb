@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_190907) do
+ActiveRecord::Schema.define(version: 2020_07_16_151850) do
 
-  create_table "adresses", force: :cascade do |t|
-    t.string "TypeOfAdress"
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "TypeOfAddress"
     t.string "Status"
     t.string "Entity"
     t.string "NumberAndStreet"
-    t.string "string"
-    t.string "SuiteOrApart"
-    t.string "integer"
+    t.string "SuiteOrAppart"
     t.string "City"
     t.string "PostalCode"
     t.string "Country"
@@ -28,23 +26,32 @@ ActiveRecord::Schema.define(version: 2020_07_13_190907) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "batteries", force: :cascade do |t|
-    t.integer "Building_id"
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "building_id"
     t.string "PropertyType"
     t.string "Status"
-    t.integer "Employee_id"
+    t.integer "employee_id"
     t.datetime "DateOfCommissioning"
-    t.datetime "DateOfLastInspec"
-    t.binary "CertficatOfOperation"
+    t.datetime "DateOfLastInspect"
+    t.string "CertificateOfOperation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Building_id"], name: "index_batteries_on_Building_id"
-    t.index ["Employee_id"], name: "index_batteries_on_Employee_id"
+    t.index ["building_id"], name: "index_batteries_on_building_id"
+    t.index ["employee_id"], name: "index_batteries_on_employee_id"
   end
 
-  create_table "buildings", force: :cascade do |t|
-    t.integer "Customer_id"
-    t.integer "Adress_id"
+  create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "building_id"
+    t.string "key"
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["building_id"], name: "index_building_details_on_building_id"
+  end
+
+  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "address_id"
     t.string "BuildingAdmFullName"
     t.string "BuildingAdmEmail"
     t.string "BuildingAdmPhone"
@@ -53,12 +60,12 @@ ActiveRecord::Schema.define(version: 2020_07_13_190907) do
     t.string "BuildingTechPhone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Adress_id"], name: "index_buildings_on_Adress_id"
-    t.index ["Customer_id"], name: "index_buildings_on_Customer_id"
+    t.index ["address_id"], name: "index_buildings_on_address_id"
+    t.index ["customer_id"], name: "index_buildings_on_customer_id"
   end
 
-  create_table "columns", force: :cascade do |t|
-    t.integer "Batterie_id"
+  create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "batterie_id"
     t.string "ProppertyType"
     t.string "NumberOfFloor"
     t.string "integer"
@@ -68,26 +75,26 @@ ActiveRecord::Schema.define(version: 2020_07_13_190907) do
     t.text "Notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Batterie_id"], name: "index_columns_on_Batterie_id"
+    t.index ["batterie_id"], name: "index_columns_on_batterie_id"
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.bigint "User_id"
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "CompanyName"
-    t.bigint "Adress_id"
+    t.bigint "address_id"
     t.string "FullNameOfContact"
     t.string "CompanyPhone"
     t.string "EmailOfContact"
-    t.string "FullNameOfServiceTechAutority"
-    t.string "TechnicalAutorityPhone"
-    t.string "TechnicalManagerEmail"
+    t.string "FullNameOfServiceTechAuthority"
+    t.string "TechnicalAuthorityPhone"
+    t.string "TechnicalAuthorityEmail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Adress_id"], name: "index_customers_on_Adress_id"
-    t.index ["User_id"], name: "index_customers_on_User_id"
+    t.index ["address_id"], name: "index_customers_on_address_id"
+    t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
-  create_table "elevators", force: :cascade do |t|
+  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "Column_id"
     t.string "serialNumber"
     t.string "Model"
@@ -103,7 +110,7 @@ ActiveRecord::Schema.define(version: 2020_07_13_190907) do
     t.index ["Column_id"], name: "index_elevators_on_Column_id"
   end
 
-  create_table "employees", force: :cascade do |t|
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "lastname"
     t.string "firstname"
@@ -113,15 +120,14 @@ ActiveRecord::Schema.define(version: 2020_07_13_190907) do
     t.index ["user_id"], name: "index_employees_on_user_id"
   end
 
-  create_table "leads", force: :cascade do |t|
+  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "FullName"
     t.string "CompanyName"
     t.string "Email"
     t.string "Phone"
     t.string "ProjectName"
     t.string "ProjectDesc"
-    t.string "text"
-    t.string "Departement"
+    t.string "Department"
     t.text "Message"
     t.string "filename"
     t.string "content_type"
@@ -131,7 +137,7 @@ ActiveRecord::Schema.define(version: 2020_07_13_190907) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "quotes", force: :cascade do |t|
+  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "fullname"
     t.string "email"
     t.string "phone"
@@ -157,7 +163,7 @@ ActiveRecord::Schema.define(version: 2020_07_13_190907) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

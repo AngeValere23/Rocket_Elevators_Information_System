@@ -357,7 +357,7 @@
                     <div class="row">
                         <div class="col-md-4"><label for="contact:subject">Business Name</label><%= text_field_tag('CompanyName', nil, id: 'contact-business', required: "required", class: "form-control") %></div>
                         <div class="col-md-4"><label for="contact:subject">Project Name</label><%= text_field_tag('ProjectName', nil, id: 'contact-project', required: "required", class: "form-control") %></div>
-                        <div class="col-md-4"><label for="contact_department">Department</label><%= select_tag('Departement', options_for_select([['--- Select ---', ''], ['Question'],['Residential'], ['Corporate']]), required: "required", class: "form-control pointer", id: 'contact-department') %></div>
+                        <div class="col-md-4"><label for="contact_department">Department</label><%= select_tag('Department', options_for_select([['--- Select ---', ''], ['Question'],['Residential'], ['Corporate']]), required: "required", class: "form-control pointer", id: 'contact-department') %></div>
                     </div>
                     <div class="row">
                         <div class="col-md-12"><label for="contact:subject">Project Description</label><%= text_field_tag('ProjectDesc', nil, id: 'contact-description', required: "required", class: "form-control") %></div>
