@@ -1,5 +1,5 @@
 namespace :warehouse do
-  desc "TODO"
+  desc "Seed data from the DB to the warehouse"
   task seed: :environment do
 
   # FactQuote
