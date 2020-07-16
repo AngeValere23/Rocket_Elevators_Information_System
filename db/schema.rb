@@ -65,17 +65,15 @@ ActiveRecord::Schema.define(version: 2020_07_16_151850) do
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "batterie_id"
-    t.string "ProppertyType"
+    t.integer "battery_id"
+    t.string "PropertyType"
     t.string "NumberOfFloor"
-    t.string "integer"
     t.string "Status"
     t.string "Informations"
-    t.string "string"
     t.text "Notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["batterie_id"], name: "index_columns_on_batterie_id"
+    t.index ["battery_id"], name: "index_columns_on_battery_id"
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -101,8 +99,8 @@ ActiveRecord::Schema.define(version: 2020_07_16_151850) do
     t.string "PropertyType"
     t.string "Status"
     t.datetime "DateOfCommissioning"
-    t.datetime "DateOflastInspection"
-    t.binary "CertificatOfInpection"
+    t.datetime "DateOfLastInspection"
+    t.string "CertificateOfInpection"
     t.string "Information"
     t.text "Notes"
     t.datetime "created_at", null: false

@@ -7,8 +7,8 @@ class CreateElevators < ActiveRecord::Migration[5.2]
       t.string :PropertyType
       t.string :Status
       t.datetime :DateOfCommissioning
-      t.datetime :DateOflastInspection
-      t.binary :CertificatOfInpection
+      t.datetime :DateOfLastInspection
+      t.string :CertificateOfInpection
       t.string :Information
       t.text :Notes
 

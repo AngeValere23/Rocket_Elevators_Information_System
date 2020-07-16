@@ -18,6 +18,15 @@ default: &default
   host: 127.0.0.1
   port: 3306
 
+postgres: &postgres
+  adapter: postgresql
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: frederic2ec
+  password:
+  host: 127.0.0.1
+  port: 5432
+
 development:
   <<: *default
   database: Rocket_Elevators_Information_System_development
@@ -53,3 +62,15 @@ production:
   database: Rocket_Elevators_Information_System_production
   username: Rocket_Elevators_Information_System
   password: <%= ENV['ROCKET_ELEVATORS_INFORMATION_SYSTEM_DATABASE_PASSWORD'] %>
+
+warehouse_development:
+  <<: *postgres
+  database: warehouse_development
+
+warehouse_test:
+  <<: *postgres
+  database: warehouse_test
+
+warehouse_production:
+  <<: *postgres
+  url: <%= ENV['WAREHOUSE_DATABASE_URL'] %>

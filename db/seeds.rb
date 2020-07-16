@@ -114,3 +114,21 @@ employee_id_for_battery = [*1..20]
 }
 
 p "Create #{Battery.count} batteries"
+
+# Create columns
+battery_id_for_column = [*1..20]
+
+20.times {
+    Column.create(:battery_id => battery_id_for_column.delete(battery_id_for_column.sample), :PropertyType => building_type.sample, :NumberOfFloor => Faker::Number.number(digits: 2), :Status => status_type.sample, :Informations => Faker::Types.rb_string, :Notes => Faker::Types.rb_string)
+}
+
+p "Create #{Column.count} columns"
+
+# Create elevators
+column_id_for_elevator = [*1..20]
+
+20.times {
+    Elevator.create(:Column_id => column_id_for_elevator.delete(column_id_for_elevator.sample), :serialNumber => Faker::Code.isbn, :Model => service_quality.sample, :Status => status_type.sample, :DateOfCommissioning => Faker::Date.between(from: 40.years.ago, to: Date.today), :DateOfLastInspection => Faker::Date.between(from: 40.years.ago, to: Date.today), :CertificateOfInpection => Faker::Code.isbn, :Information => Faker::Types.rb_string, :Notes => Faker::Types.rb_string)
+}
+
+p "Create #{Elevator.count} elevators"
