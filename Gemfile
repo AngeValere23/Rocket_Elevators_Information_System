@@ -73,6 +73,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+gem 'multiverse'
+
 gem 'rails_admin', '~> 2.0'
 
 gem 'sqlite3'
@@ -80,3 +83,7 @@ gem 'sqlite3'
 gem 'rails_admin_charts'
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+gem 'whenever', require: false
+
+gem 'groupdate'
