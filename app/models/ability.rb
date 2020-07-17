@@ -13,26 +13,21 @@ class Ability
         user.present?
       end
       can :index, Customer, user_id: user.id
-      can :index, Elevator
-      can :index, Building
-      can :index, Battery
-      can :index, BuildingDetail
-      can :index, Column
-      #can :index, Elevator, ["column_id = ?", user.customer.building.battery.column.id] do |elevator|
-      #  elevator.present?
-      #end
-      #can :index, Building, ["customer_id = ?", user.customer.id] do |building|
-      #  building.present?
-      #end
-      #can :index, Battery,["building_id = ?", user.customer.building.id] do |battery|
-      #battery.present?
-      #end
-      #can :index, BuildingDetail, ["building_id = ?", user.customer.building.id] do |detail|
-      #  detail.present?
-      #end
-      #can :index, Column,["battery_id = ?", user.customer.building.battery.id] do |column|
-      #  column.present?
-      #end
+      can :index, Elevator, ["column_id = ?", user.customer.building.battery.column.id] do |elevator|
+        elevator.present?
+      end
+      can :index, Building, ["customer_id = ?", user.customer.id] do |building|
+        building.present?
+      end
+      can :index, Battery,["building_id = ?", user.customer.building.id] do |battery|
+      battery.present?
+      end
+      can :index, BuildingDetail, ["building_id = ?", user.customer.building.id] do |detail|
+       detail.present?
+      end
+      can :index, Column,["battery_id = ?", user.customer.building.battery.id] do |column|
+        column.present?
+      end
     else
       return
     end
