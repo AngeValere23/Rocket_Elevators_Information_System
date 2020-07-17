@@ -107,3 +107,9 @@ gem 'multiverse'
 
 # Cron
 gem 'whenever', require: false
+
+# Charts
+gem 'rails_admin_charts'
+
+# month group
+gem 'groupdate'

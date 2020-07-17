@@ -45,7 +45,7 @@ p "Created #{Employee.count} employees"
 
 # Create leads
 100.times {
-    Lead.create(:FullName => Faker::Name.name, :CompanyName => Faker::Company.name, :Email => Faker::Internet.email, :Phone => Faker::PhoneNumber.phone_number, :ProjectName => Faker::Company.industry, :ProjectDesc => Faker::Company.type, :Message => Faker::Construction.subcontract_category, :Department => Faker::Commerce.department, :created_at => Faker::Date.between(from: 40.years.ago, to: Date.today))
+    Lead.create(:FullName => Faker::Name.name, :CompanyName => Faker::Company.name, :Email => Faker::Internet.email, :Phone => Faker::PhoneNumber.phone_number, :ProjectName => Faker::Company.industry, :ProjectDesc => Faker::Company.type, :Message => Faker::Construction.subcontract_category, :Department => Faker::Commerce.department, :created_at => Faker::Date.between(from: 2.years.ago, to: Date.today))
 }
 
 p "Create #{Lead.count} leads"
@@ -57,7 +57,7 @@ service_quality = ["Standard", "Premium", "Excelium"]
 
 # Create quotes
 100.times {
-    Quote.create(:fullname => Faker::Name.name, :email => Faker::Internet.email, :phone => Faker::PhoneNumber.phone_number, :businessname => Faker::Company.name, :projectname => Faker::Company.industry, :quality => service_quality.sample, :buildingtype => building_type.sample, :nbapartment => Faker::Number.digit, :nbfloor => Faker::Number.digit, :nbbasement => Faker::Number.digit, :nbbusiness => Faker::Number.digit, :nbparking => Faker::Number.digit, :nbshaft => Faker::Number.digit, :nboccupant => Faker::Number.digit, :nbcompanies => Faker::Number.digit, :activehours => Faker::Number.digit, :nbelevator => Faker::Number.digit, :elevatorprice => Faker::Commerce.price, :subtotal => Faker::Commerce.price, :installfee => Faker::Commerce.price, :total => Faker::Commerce.price, :created_at => Faker::Date.between(from: 40.years.ago, to: Date.today))
+    Quote.create(:fullname => Faker::Name.name, :email => Faker::Internet.email, :phone => Faker::PhoneNumber.phone_number, :businessname => Faker::Company.name, :projectname => Faker::Company.industry, :quality => service_quality.sample, :buildingtype => building_type.sample, :nbapartment => Faker::Number.digit, :nbfloor => Faker::Number.digit, :nbbasement => Faker::Number.digit, :nbbusiness => Faker::Number.digit, :nbparking => Faker::Number.digit, :nbshaft => Faker::Number.digit, :nboccupant => Faker::Number.digit, :nbcompanies => Faker::Number.digit, :activehours => Faker::Number.digit, :nbelevator => Faker::Number.digit, :elevatorprice => Faker::Commerce.price, :subtotal => Faker::Commerce.price, :installfee => Faker::Commerce.price, :total => Faker::Commerce.price, :created_at => Faker::Date.between(from: 2.years.ago, to: Date.today))
 }
 
 p "Create #{Quote.count} quotes"
@@ -110,7 +110,7 @@ building_id_for_battery = [*1..20]
 employee_id_for_battery = [*1..20]
 
 20.times {
-    Battery.create(:building_id => building_id_for_battery.delete(building_id_for_battery.sample), :PropertyType => building_type.sample, :Status => status_type.sample, :employee_id => employee_id_for_battery.delete(employee_id_for_battery.sample), :DateOfCommissioning => Faker::Date.between(from: 40.years.ago, to: Date.today), :DateOfLastInspect => Faker::Date.between(from: 40.years.ago, to: Date.today), :CertificateOfOperation => Faker::Code.isbn)
+    Battery.create(:building_id => building_id_for_battery.delete(building_id_for_battery.sample), :PropertyType => building_type.sample, :Status => status_type.sample, :employee_id => employee_id_for_battery.delete(employee_id_for_battery.sample), :DateOfCommissioning => Faker::Date.between(from: 2.years.ago, to: Date.today), :DateOfLastInspect => Faker::Date.between(from: 2.years.ago, to: Date.today), :CertificateOfOperation => Faker::Code.isbn)
 }
 
 p "Create #{Battery.count} batteries"
@@ -128,7 +128,7 @@ p "Create #{Column.count} columns"
 column_id_for_elevator = [*1..20]
 
 20.times {
-    Elevator.create(:Column_id => column_id_for_elevator.delete(column_id_for_elevator.sample), :serialNumber => Faker::Code.isbn, :Model => service_quality.sample, :PropertyType  => building_type.sample,:Status => status_type.sample, :DateOfCommissioning => Faker::Date.between(from: 40.years.ago, to: Date.today), :DateOfLastInspection => Faker::Date.between(from: 40.years.ago, to: Date.today), :CertificateOfInpection => Faker::Code.isbn, :Information => Faker::Types.rb_string, :Notes => Faker::Types.rb_string)
+    Elevator.create(:Column_id => column_id_for_elevator.delete(column_id_for_elevator.sample), :serialNumber => Faker::Code.isbn, :Model => service_quality.sample, :PropertyType  => building_type.sample,:Status => status_type.sample, :DateOfCommissioning => Faker::Date.between(from: 2.years.ago, to: Date.today), :DateOfLastInspection => Faker::Date.between(from: 2.years.ago, to: Date.today), :CertificateOfInpection => Faker::Code.isbn, :Information => Faker::Types.rb_string, :Notes => Faker::Types.rb_string)
 }
 
 p "Create #{Elevator.count} elevators"
