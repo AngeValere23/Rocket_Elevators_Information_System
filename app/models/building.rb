@@ -3,5 +3,5 @@ class Building < ApplicationRecord
   belongs_to :address
 
   has_one :building_detail
-  has_one :battery
+  has_many :battery
 end

@@ -113,3 +113,6 @@ gem 'rails_admin_charts'
 
 # month group
 gem 'groupdate'
+
+# Cancancan
+gem 'cancancan'
