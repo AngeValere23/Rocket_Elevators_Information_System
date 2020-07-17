@@ -29,6 +29,7 @@ Employee.create(:user_id => dboutin.id, :lastname => "Boutin", :firstname => "Da
 Employee.create(:user_id => mlortie.id, :lastname => "Lortie", :firstname => "Mathieu", :title => "Engineer")
 Employee.create(:user_id => tcarrier.id, :lastname => "Carrier", :firstname => "Thomas", :title => "Engineer")
 
+p "Created #{Employee.count} employees"
 
 30.times {
     user = User.create(:email => Faker::Internet.unique.email,
