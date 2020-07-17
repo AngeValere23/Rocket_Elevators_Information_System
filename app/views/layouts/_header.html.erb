@@ -20,9 +20,9 @@
                         <li class="dropdown"><a class="dropdown-toggle">Account</a>
                             <ul class="dropdown-menu">
                                 <% if current_user.present? %>
-                                <% if is_employee? %>
+                                <% if can? :access, :rails_admin %>
                                 <li><%= link_to "Backoffice", rails_admin_path %></li>
-                                <%end%>
+                                <% end %>
                                 <li><%= link_to('Edit account', edit_user_registration_path) %></li>
                                 <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
                                 <%else%>
