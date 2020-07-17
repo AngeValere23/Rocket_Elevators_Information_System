@@ -6,8 +6,6 @@ class DimCustomer < WarehouseRecord
 
 
     DimCustomer.all.each do |key|
-        puts key.ContactFullname
-        puts key.NbElevator
     data.push({
         name: key.ContactFullname,
         pointInterval: point_interval = 1.day * 1000,
