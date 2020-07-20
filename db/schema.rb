@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 2020_07_16_151850) do
     t.text "Message"
     t.string "filename"
     t.string "content_type"
-    t.binary "file_contents"
+    t.binary "file_contents", limit: 4294967295
     t.string "download"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

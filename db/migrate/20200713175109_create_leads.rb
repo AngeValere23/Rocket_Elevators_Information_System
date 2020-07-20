@@ -11,7 +11,7 @@ class CreateLeads < ActiveRecord::Migration[5.2]
       t.text :Message
       t.string :filename
       t.string :content_type
-      t.binary :file_contents
+      t.binary :file_contents, limit: 160000000
       t.string :download
 
       t.timestamps
